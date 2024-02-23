@@ -12,6 +12,8 @@ def index():
         destination = request.form.get('destination')
         print(origin, destination)
         get_direction(origin, destination)
+        # json_data = get_direction(origin, destination) this is working ref-no 12
+        # print(json_data) this is working ref-no 12
 
     return render_template('index.html')
 

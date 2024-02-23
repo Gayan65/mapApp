@@ -37,3 +37,6 @@ def get_direction(orig, dest):
         print("Status Code: " + str(json_status) + "; Refer to:")
         print("https://developer.mapquest.com/documentation/directions-api/status-codes")
         print("************************************************************************\n")
+    
+    # return json_data 
+    # THIS PART SHOULD MOVE TO THE APP.PY this is working ref-no 12
