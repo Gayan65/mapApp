@@ -7,8 +7,9 @@ app = Flask(__name__)
 def index():
     if request.method == 'GET':
         # Access form data from query parameters (GET method)
-        name = request.args.get('name')
-        print(name)
+        origin = request.args.get('origin')
+        destination = request.args.get('destination')
+        print(origin, destination)
     return render_template('index.html')
 
 if __name__ == "__main__":
