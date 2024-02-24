@@ -12,11 +12,12 @@ def get_direction(orig, dest):
 
     url = main_api + urllib.parse.urlencode({"key": key, "from":orig, "to":dest})
 
-    print("URL: " + (url))
+    #print("URL: " + (url))
 
     json_data = requests.get(url).json()
-    json_status = json_data["info"]["statuscode"]
-
+    return json_data 
+    #json_status = json_data["info"]["statuscode"]
+'''
     if json_status == 0:
         print("API Status: " + str(json_status) + " = A successful route call.\n")
         print("Directions from " + (orig) + " to " + (dest))
@@ -37,6 +38,6 @@ def get_direction(orig, dest):
         print("Status Code: " + str(json_status) + "; Refer to:")
         print("https://developer.mapquest.com/documentation/directions-api/status-codes")
         print("************************************************************************\n")
-    
-    # return json_data 
+    '''
+
     # THIS PART SHOULD MOVE TO THE APP.PY this is working ref-no 12
