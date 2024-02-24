@@ -7,16 +7,18 @@ app = Flask(__name__)
 
 def index():
     json_data=None # To handle the error referenced before assignment
+    origin = None
+    destination = None
     if request.method == 'POST':
         # Access form data from query parameters (GET method)
         origin = request.form.get('origin')
         destination = request.form.get('destination')
-        print(origin, destination)
+        #print(origin, destination)
         #get_direction(origin, destination)
         json_data = get_direction(origin, destination) #this is working ref-no 12
-        print(json_data) #this is working ref-no 12
+        #print(json_data) #this is working ref-no 12
 
-    return render_template('index.html', data = json_data)
+    return render_template('index.html', data = json_data, origin = origin, destination = destination)
 
 if __name__ == "__main__":
     app.run(debug=True)
