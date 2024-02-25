@@ -19,5 +19,17 @@ def index():
 
     return render_template('index.html', data = json_data, origin = origin, destination = destination)
 
+#css file route
+@app.route('/styles/main.css')
+def serve_css():
+    return app.send_static_file('styles/main.css')
+
+
+#favicon file route
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('favicon.ico')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
