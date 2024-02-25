@@ -23,12 +23,17 @@
       <p>Directions</p>
       {% for each in data["route"]["legs"][0]["maneuvers"]%}
       <p>
-        {{ (each["narrative"]), "{:.2f}".format((each["distance"])*1.61), " km"
-        }}
+        {{ each["narrative"], "{:.2f}".format((each["distance"])*1.61), " km" }}
       </p>
-      {% endfor %} {% endif %}
-      <p>{{data["info"]["statuscode"]}}</p>
-      {% endif %}
+      {% endfor %} {% elif data["info"]["statuscode"] == 402 %}
+      <p>Invalid user inputs for one or both locations.</p>
+      {% else %}
+      <p>Status Code: {{data["info"]["statuscode"]}}</p>
+      <p>
+        Refer :
+        https://developer.mapquest.com/documentation/directions-api/status-codes
+      </p>
+      {% endif %} {% endif %}
     </form>
   </body>
 </html>
