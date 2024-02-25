@@ -68,11 +68,27 @@
       </div>
     </div>
 
-    {% if origin != None and destination != None%}
-    <p>Directions from {{origin}} to {{destination}}</p>
-    {% endif %} {% if data != None %} {% if data["info"]["statuscode"] == 0 %}
-    <p>Trip Duration: {{data["route"]["formattedTime"]}}</p>
-    <p>Kilometers: {{"{:.2f}".format((data["route"]["distance"])*1.61)}}</p>
+    {% if origin != None and destination != None%} {% endif %} {% if data !=
+    None %} {% if data["info"]["statuscode"] == 0 %}
+
+    <div class="card container mt-5">
+      <div class="card-body">
+        <h5 class="card-title">Summery from {{origin}} to {{destination}}</h5>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Trip Duration</td>
+              <td>Distance</td>
+            </tr>
+            <tr>
+              <td>{{data["route"]["formattedTime"]}}</td>
+              <td>{{"{:.2f}".format((data["route"]["distance"])*1.61)}}km</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <p>Directions</p>
     {% for each in data["route"]["legs"][0]["maneuvers"]%}
     <p>
