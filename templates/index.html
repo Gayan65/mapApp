@@ -95,7 +95,12 @@
       {{ each["narrative"] }} {{"{:.2f}".format((each["distance"])*1.61)}} km
     </p>
     {% endfor %} {% elif data["info"]["statuscode"] == 402 %}
-    <p>Invalid user inputs for one or both locations.</p>
+    <div class="card container mt-5">
+      <div class="card-body">
+        <h5 class="card-title">Cannot find the locations...</h5>
+        Invalid user inputs for one or both locations.
+      </div>
+    </div>
     {% else %}
     <p>Status Code: {{data["info"]["statuscode"]}}</p>
     <p>
