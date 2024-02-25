@@ -23,7 +23,7 @@
       <p>Directions</p>
       {% for each in data["route"]["legs"][0]["maneuvers"]%}
       <p>
-        {{ each["narrative"], "{:.2f}".format((each["distance"])*1.61), " km" }}
+        {{ each["narrative"] }} {{"{:.2f}".format((each["distance"])*1.61)}} km
       </p>
       {% endfor %} {% elif data["info"]["statuscode"] == 402 %}
       <p>Invalid user inputs for one or both locations.</p>
