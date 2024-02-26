@@ -14,7 +14,7 @@ Need to have an .env file and “KEY” should be configured with your API KEY f
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/your-flask-app.git
+git clone https://github.com/your-username/your-flask-app.git](https://github.com/Gayan65/mapApp.git
 
 # Change into the project directory
 cd mapapp
